@@ -5,7 +5,7 @@ import dotenv, { config } from "dotenv";
 dotenv.config();
 
 import { postLogin,postSignup} from "./controllers/user.js";
-import { postTransaction } from "./controllers/transaction.js";
+import { postTransaction , getTransactions} from "./controllers/transaction.js";
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -30,6 +30,7 @@ app.post("/signup", postSignup);
 app.post("/login", postLogin);
 
 app.post('/transaction', postTransaction)
+app.get('/transactions', getTransactions)
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
