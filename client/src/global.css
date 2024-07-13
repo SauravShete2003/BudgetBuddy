@@ -1,0 +1,12 @@
+.input-box{
+    display: block;
+    padding: 5px;
+    width: 100%;
+    height: 30px;
+    margin: 10px;
+    border: 1px solid #ccc;
+}
+
+.input-box:focus, .input-box:active{
+    outline: none;
+}

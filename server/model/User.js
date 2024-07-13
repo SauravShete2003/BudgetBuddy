@@ -13,10 +13,6 @@ const userSchema = new Schema ({
     password : {
         type : String
     },
-    role : {
-        type : String,
-        default : "user"
-    },
     address : {
         type : String   
     },

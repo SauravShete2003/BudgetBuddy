@@ -1,0 +1,14 @@
+.signup-from{
+    width: 350px;
+    margin: 0 auto;
+}
+
+.signup-heading{
+    text-align: center;
+}
+
+.signup-container{
+    background-color: antiquewhite;
+    width: 450px;
+    margin: 70px auto;
+}
