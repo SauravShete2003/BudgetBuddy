@@ -13,7 +13,7 @@ const postSignup = async (req, res) => {
     const savedUser = await user.save();
 
     res.json({
-      suucess: true,
+      success: true,
       message: "sign up successfully",
       data: savedUser,
     });
