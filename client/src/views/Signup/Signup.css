@@ -1,14 +1,36 @@
-.signup-from{
-    width: 350px;
-    margin: 0 auto;
-}
-
-.signup-heading{
+.signup-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .form-container {
+    flex: 1;
+    padding-right: 20px;
+  }
+  
+  .signup-heading {
     text-align: center;
-}
-
-.signup-container{
-    background-color: antiquewhite;
-    width: 450px;
-    margin: 70px auto;
-}
+  }
+  
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .signup-img-container {
+    flex: 1;
+    padding-left: 20px;
+  }
+  
+  .signup-img {
+    max-width: 100%;
+    height: auto;
+  }
+  
