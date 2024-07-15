@@ -35,10 +35,10 @@ function Signup() {
   };
 
   return (
-    <div className="signup-container">
+    <div className="auth-container">
       <div className="form-container">
-        <h1 className="signup-heading">User Registration</h1>
-        <form className="signup-form">
+        <h1 className="auth-heading">User Registration</h1>
+        <form className="auth-form">
           <div className="form-group">
             <input
               type="text"
@@ -86,10 +86,10 @@ function Signup() {
           </div>
         </form>
       </div>
-      <div className="signup-img-container">
+      <div className="auth-img-container">
         <img
           src="https://media.istockphoto.com/id/1342226806/photo/mobile-phone-app-for-money-budget-and-expense-tracking.jpg?s=612x612&w=0&k=20&c=FFp9jyIJotg1pgMQnSlcQWz5XO6CpkLnR6VvKrYTcnQ="
-          className="signup-img"
+          className="auth-img"
           alt="Signup Illustration"
         />
       </div>
