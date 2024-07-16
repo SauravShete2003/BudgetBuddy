@@ -66,3 +66,11 @@ body{
     height: 99.2vh;
   }
   
+  .auth-link{
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #160af6;
+    font-weight: 600;
+  }

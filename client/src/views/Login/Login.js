@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import "./Login.css";
 import toast, { Toaster } from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 function Login() {
   const [user, setUser] = useState({
@@ -23,7 +24,8 @@ function Login() {
           email: "",
           password: "",
         });
-        toast.success("Login successful!");
+        toast.success(response.data.message); 
+        localStorage.setItem('currentUser',JSON.stringify(response.data.data))     
         setTimeout(() => {
           window.location.href = '/';
       }, 2000); 
@@ -66,6 +68,7 @@ function Login() {
           >
             Login
           </button>
+          <Link to='/signup' className="auth-link">Don`t have a account ? Signup</Link>
         </form>
       </div>
       <div className="login-img-container">

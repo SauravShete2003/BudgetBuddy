@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Signup.css";
 
@@ -83,6 +84,8 @@ function Signup() {
             >
               Register
             </button>
+            <Link to="/login" className="auth-link">Already have an account? Login</Link>
+
           </div>
         </form>
       </div>

@@ -36,7 +36,7 @@ if (!user){
         data:null
     })
 }
-const transactions = await Transaction.find({user : userId})
+const transactions = await Transaction.find({user : userId}).sort({createdAt : -1})
 res.json({
     success : true,
     message:"Transactions fetched successfully",

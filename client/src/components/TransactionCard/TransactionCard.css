@@ -1,0 +1,31 @@
+.transcaction-card-container{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    border: 2px solid gray;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 1px gray;
+}
+
+.transcaction-card-title{
+  font-size: 25px;
+}
+
+.transcaction-card-amount{
+    font-weight: 600;
+}
+
+.transcaction-card-category{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.text-green{
+    color: green;
+}
+
+.text-red{
+    color: red;
+}
