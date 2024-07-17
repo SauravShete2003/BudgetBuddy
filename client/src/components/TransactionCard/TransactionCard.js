@@ -12,12 +12,14 @@ function TransactionCard({
   createdAt,
   loadTransactions,
 }) {
-  const DeleteTransaction = async () => {
+
+  const deleteTransaction = async () => {
+
     const response = await axios.delete(
     `${process.env.REACT_APP_API_URL}/transaction/${_id}`);
     toast.success(response.data.message);
     loadTransactions();
-
+  }          
     return (
       <div className="transaction-card">
         <span className="transaction-title">{title}</span>
@@ -31,14 +33,12 @@ function TransactionCard({
         <button
           type="button"
           className="delete-btn"
-          onClick={DeleteTransaction}
-        >
+          onClick={deleteTransaction}>
           Delete
         </button>
         <Toaster />
       </div>
     );
   };
-}
 
 export default TransactionCard;

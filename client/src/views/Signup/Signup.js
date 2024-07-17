@@ -3,7 +3,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Signup.css";
-import logo from './logo.png'
+import logo from './sign-up.avif'
 
 function Signup() {
   const [user, SetUser] = useState({
@@ -38,7 +38,6 @@ function Signup() {
 
   return (
     <div className="auth-container">
-      <img src={logo} className="logo-img"/>
       <div className="form-container">
         <h1 className="auth-heading">User Registration</h1>
         <form className="auth-form">
@@ -93,7 +92,7 @@ function Signup() {
       </div>
       <div className="auth-img-container">
         <img
-          src="https://media.istockphoto.com/id/1342226806/photo/mobile-phone-app-for-money-budget-and-expense-tracking.jpg?s=612x612&w=0&k=20&c=FFp9jyIJotg1pgMQnSlcQWz5XO6CpkLnR6VvKrYTcnQ="
+          src={logo}
           className="auth-img"
           alt="Signup Illustration"
         />

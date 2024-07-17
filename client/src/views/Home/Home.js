@@ -85,6 +85,7 @@ function Home() {
         </div>
         <div className="transaction">
         {transactions.map((object) => {
+
           const { title, _id, amount, category, type, createdAt } = object;
           return (
             <TransactionCard
