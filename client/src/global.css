@@ -56,8 +56,9 @@ body {
   top: 29%;
   right: 15.7%;
 }
-.signup-heading{
+.auth-heading{
   position: absolute;
-  top: 45px;
+  top: 60px;
   right: 20%;
+  color: blue;
 }

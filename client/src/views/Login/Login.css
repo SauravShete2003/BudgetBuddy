@@ -5,36 +5,44 @@
     border-radius: 5px;
   }
   
-  .form-container {
-    flex: 1;
-    padding: 20px;
-  }
-  
-  .login-form {
-    display: flex;
-    flex-direction: column;
-  }
-  
   .login-btn {
+    display: block;
     font-weight: 600;
     width: 200px;
-    margin: 0 auto;
+    margin: 10px auto;
     padding: 10px;
     border: none;
-    background-color: #007bff;
+    background-color: #3f50ed;
     color: white;
     cursor: pointer;
     border-radius: 4px;
   }
   .login-btn:hover{
-    background-color: #025ebf;
-  }
-  
-  .login-img-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: #0535f4;
   }
   
   
+  .login-heading{
+    position: absolute;
+    top: 60px;
+    right: 25%;
+    color: blue;
+  }
+
+  .login-input-container {
+    border-radius: 5px;
+    width: 27%;
+    padding: 15px 10px;
+    position: absolute;
+    top: 33%;
+    right: 15.7%;
+  }
+  .login-link {
+    margin-top: 10px;
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #160af6;
+    font-weight: 600;
+  }

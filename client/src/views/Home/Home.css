@@ -48,7 +48,7 @@ body {
 }
 
 .transaction-details-item {
-  box-shadow: 0 0 10px 4px rgba(247, 246, 246, 0.8);
+  box-shadow: 0 0 6px 4px rgba(193, 193, 193, 0.8);
   width: 150px;
   padding: 15px;
   margin: 10px;

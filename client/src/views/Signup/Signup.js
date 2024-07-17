@@ -39,7 +39,7 @@ function Signup() {
   return (
     <div className="auth-container">
       <img src={BackgroundImg} className="auth-img" alt="Signup Illustration" />
-      <h1 className="signup-heading">User Registration</h1>
+      <h1 className="auth-heading">User Registration</h1>
       <form className="">
         <div className="auth-input-container">
           <input
