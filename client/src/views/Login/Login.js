@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./Login.css";
 import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
-
+import logo from './logo.png'
 function Login() {
   const [user, setUser] = useState({
     email: "",
@@ -37,6 +37,7 @@ function Login() {
 
   return (
     <div className="login-container">
+      <img src={logo} className="logo-img"/>
       <div className="form-container">
         <h1 className="auth-heading">User Login</h1>
         <form className="login-form">
@@ -50,7 +51,6 @@ function Login() {
               setUser({ ...user, email: e.target.value });
             }}
           />
-
           <input
             type="password"
             name="password"

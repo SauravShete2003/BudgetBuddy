@@ -3,7 +3,8 @@ import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
 import "./Home.css";
 import TransactionCard from "../../components/TransactionCard/TransactionCard";
-import addImg from './wallet.png'
+import addImg from './add.png'
+import { Link } from "react-router-dom";
 
 function Home() {
   const [user, setUser] = useState("");
@@ -71,15 +72,15 @@ function Home() {
         <div className="transaction-details-container">
           <div className="transaction-details-item" style={{ color: "green" }}>
             <span className="transaction-details">Net Income</span>
-            <span className="transaction-title" style={{ color: "white" }}>{netIncome}</span>
+            <span className="transaction-title" >{netIncome}</span>
           </div>
-          <div className="transaction-details-item" style={{ color: "white" }}>
+          <div className="transaction-details-item">
             <span className="transaction-details">Net Balance</span>
-            <span className="transaction-title" style={{ color: "white" }}>{netIncome - netExpense}</span>
+            <span className="transaction-title">{netIncome - netExpense}</span>
           </div>
           <div className="transaction-details-item" style={{ color: "red" }}>
             <span className="transaction-details">Net Expense</span>
-            <span className="transaction-title" style={{ color: "white" }}>{netExpense}</span>
+            <span className="transaction-title">{netExpense}</span>
           </div>
         </div>
         <div className="transaction">
@@ -99,7 +100,9 @@ function Home() {
           );
         })}
         </div>
+        <Link to={'/add'}>
         <img src={addImg} className="add-img"/>
+        </Link>
         <Toaster />
       </div>
     </>

@@ -1,5 +1,5 @@
 .transaction-card {
-  background-color: #FFFAFA;
+  background-color: #fffafa;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 30px 20px;
@@ -7,7 +7,6 @@
   transition: transform 0.3s, box-shadow 0.3s;
   position: relative;
 }
-
 
 .transaction-title {
   font-weight: 700;
@@ -39,4 +38,21 @@
 
 .transaction-type-debit {
   color: red;
+}
+
+.delete-btn {
+  position: absolute;
+  left: 17%;
+  bottom: 30%;
+  padding: 7px 20px;
+  border-radius: 15px;
+  background-color: rgb(125, 125, 134);
+  color: white;
+  border: none;
+  font-weight: 600;
+}
+.delete-btn:hover{
+  transition: 0.5s;
+  background-color: white;
+  color: black;
 }

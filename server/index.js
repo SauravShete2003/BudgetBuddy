@@ -5,7 +5,7 @@ import dotenv, { config } from "dotenv";
 dotenv.config();
 
 import { postLogin,postSignup} from "./controllers/user.js";
-import { postTransaction , getTransactions} from "./controllers/transaction.js";
+import { postTransaction , getTransactions, deleteTransaction} from "./controllers/transaction.js";
 const app = express();
 app.use(express.json());
 app.use(cors());
