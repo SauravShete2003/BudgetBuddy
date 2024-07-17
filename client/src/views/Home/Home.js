@@ -3,18 +3,19 @@ import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
 import "./Home.css";
 import TransactionCard from "../../components/TransactionCard/TransactionCard";
+import addImg from './wallet.png'
+
 function Home() {
   const [user, setUser] = useState("");
   const [transactions, setTransactions] = useState([]);
-  const [netIncome , setNetIncome] = useState(0);
-  const [netExpense , setNetExpense]= useState(0)
+  const [netIncome, setNetIncome] = useState(0);
+  const [netExpense, setNetExpense] = useState(0);
 
   useEffect(() => {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
     if (currentUser) {
       setUser(currentUser);
-    }
-    if (!currentUser) {
+    } else {
       window.location.href = "/login";
     }
   }, []);
@@ -30,14 +31,30 @@ function Home() {
     toast.dismiss();
     setTransactions(response.data.data);
   };
+
   useEffect(() => {
     loadTransactions();
   }, [user]);
+
+  useEffect(() => {
+    let income = 0;
+    let expense = 0;
+    transactions.forEach((transaction) => {
+      if (transaction.type === "credit") {
+        income += transaction.amount;
+      } else {
+        expense += transaction.amount;
+      }
+    });
+    setNetIncome(income);
+    setNetExpense(expense);
+  }, [transactions]);
+
   return (
     <>
-      <div>
+      <div className="home-container">
         <span className="home-heading">
-          Welcome {user.fullName} To Budget Buddy🩷
+          Welcome {user.fullName} To Budget Buddy...🩷
         </span>
         <span
           className="logout-btn"
@@ -51,25 +68,21 @@ function Home() {
         >
           LogOut
         </span>
-        <div className="transaction-details-conatiner">
-          <div className="transaction-details-item">
-            <span className="transaction-details">{netIncome}</span>
-            <br />
+        <div className="transaction-details-container">
+          <div className="transaction-details-item" style={{ color: "green" }}>
             <span className="transaction-details">Net Income</span>
+            <span className="transaction-title" style={{ color: "white" }}>{netIncome}</span>
           </div>
-
-          <div className="transaction-details-item">
-            <span className="transaction-details">+ totalCreadit</span>
-            <br />
-            <span className="transaction-title">{netIncome - netExpense}</span>
+          <div className="transaction-details-item" style={{ color: "white" }}>
+            <span className="transaction-details">Net Balance</span>
+            <span className="transaction-title" style={{ color: "white" }}>{netIncome - netExpense}</span>
           </div>
-
-          <div className="transaction-details-item">
-            <span className="transaction-details">+totalCreadit</span>
-            <br />
-            <span className="transaction-title">{netExpense}</span>
+          <div className="transaction-details-item" style={{ color: "red" }}>
+            <span className="transaction-details">Net Expense</span>
+            <span className="transaction-title" style={{ color: "white" }}>{netExpense}</span>
           </div>
         </div>
+        <div className="transaction">
         {transactions.map((object) => {
           const { title, _id, amount, category, type, createdAt } = object;
           return (
@@ -85,6 +98,8 @@ function Home() {
             />
           );
         })}
+        </div>
+        <img src={addImg} className="add-img"/>
         <Toaster />
       </div>
     </>

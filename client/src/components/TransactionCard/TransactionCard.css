@@ -1,31 +1,42 @@
-.transcaction-card-container{
-    display: flex;
-    flex-direction: column;
-    width: 95%;
-    border: 2px solid gray;
-    margin: 10px;
-    padding: 5px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px 1px gray;
+.transaction-card {
+  background-color: #FFFAFA;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px 20px;
+  margin: 10px 0;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
 }
 
-.transcaction-card-title{
+
+.transaction-title {
+  font-weight: 700;
   font-size: 25px;
 }
 
-.transcaction-card-amount{
-    font-weight: 600;
+.transaction-date {
+  position: absolute;
+  top: 50%;
+  font-size: 15px;
+  font-weight: 700;
 }
 
-.transcaction-card-category{
-    font-size: 15px;
-    font-weight: 600;
+.transaction-amount {
+  position: absolute;
+  right: 10px;
+  top: 35%;
+  font-size: 20px;
+  font-weight: 700;
 }
 
-.text-green{
-    color: green;
+.transaction-category {
+  font-size: 16px;
 }
 
-.text-red{
-    color: red;
+.transaction-type-credit {
+  color: green;
+}
+
+.transaction-type-debit {
+  color: red;
 }

@@ -1,17 +1,15 @@
+import React from "react";
 import "./TransactionCard.css";
-function TransactionCard({ title, amount, _id, type, category, createdAt }) {
+
+function TransactionCard({ _id, title, amount, category, type, createdAt, loadTransactions }) {
   return (
-    <div className="transcaction-card-container">
-      <h1 className="transcaction-card-title">{title}</h1>
-      <span className="transcaction-card-amount"
-      style={{ color: type === "credit" ? "green" : "red" }} >
-        {type === "credit" ? "+" : "-"}
-        {amount}
+    <div className="transaction-card">
+      <span className="transaction-title">{title}</span>
+      <span className="transaction-date">{new Date(createdAt).toLocaleString()}</span>
+      <span className={`transaction-amount transaction-type-${type}`}>
+        {type === "credit" ? `+${amount}` : `-${amount}`}
       </span>
-      <span className="transcaction-card-category">{category}</span>
-      <span>
-        { new Date(createdAt).toLocaleString()}
-      </span>
+      <span className="transaction-category">{category}</span>
     </div>
   );
 }

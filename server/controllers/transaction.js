@@ -25,8 +25,8 @@ const postTransaction = async (req , res) =>{
 
 const getTransactions = async (req , res)=>{
 const {userId} = req.query;
-console.log(userId)
 
+console.log(userId)
 const user = await User.findById(userId)
 
 if (!user){
