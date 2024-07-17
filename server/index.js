@@ -30,7 +30,10 @@ app.post("/signup", postSignup);
 app.post("/login", postLogin);
 
 app.post('/transaction', postTransaction)
+
 app.get('/transactions', getTransactions)
+
+app.delete('/transaction/:id', deleteTransaction)
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
