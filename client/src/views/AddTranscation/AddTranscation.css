@@ -1,20 +1,6 @@
-.transaction-container{
-    width: 50%;
-    padding: 10px;
-    margin: 50px auto;
-    text-align: center;
-    color: white;
-    box-shadow: 0 0 6px 5px white;  
-    border: none;
-    border-radius: 5px;
-}
-
-.user-input{
-    width: 100%;
-    height: 40px;
-    border: none;
-    border-radius: 5px;
-    margin: 6px 0;
-    font-weight: 600;
-    padding: 8px 10px;
+.transaction-heading{
+    position: absolute;
+    top: 60px;
+    right: 12%;
+    color: blue;
 }
