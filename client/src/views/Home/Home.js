@@ -39,16 +39,17 @@ function Home() {
   useEffect(() => {
     let income = 0;
     let expense = 0;
-    transactions.forEach((transaction) => {
-      if (transaction.type === "credit") {
-        income += transaction.amount;
+    transactions.forEach(({ type, amount }) => {
+      if (type === "credit") {
+        income += amount;
       } else {
-        expense += transaction.amount;
+        expense += amount;
       }
     });
     setNetIncome(income);
     setNetExpense(expense);
   }, [transactions]);
+  
 
   return (
     <>

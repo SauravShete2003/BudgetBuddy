@@ -8,7 +8,7 @@ function AddTranscation() {
   const [user, setUser] = useState("");
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
-  const [type, setType] = useState("");
+  const [type, setType] = useState("credit");
   const [category, setCategory] = useState("");
 
   const AddTranscation = async () => {
@@ -23,6 +23,7 @@ function AddTranscation() {
       }
     );
     toast.success(response.data.message);
+    console.log(response)
 
     setAmount(0);
     setTitle("");
@@ -74,8 +75,8 @@ function AddTranscation() {
               onChange={(e) => setType(e.target.value)}
               style={{width: '97%'}}
             >
-              <option value="credit">credit</option>
-              <option value="debit">debit</option>
+              <option value="credit">Income</option>
+              <option value="debit">Expense</option>
             </select>
 
             <select
