@@ -1,9 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
-import "./Login.css";
 import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
-import BackgroundImg from "../Signup/signup-img.jpg";
 function Login() {
   const [user, setUser] = useState({
     email: "",
@@ -35,12 +33,9 @@ function Login() {
   };
 
   return (
-    <div className="auth-container">
-      <div className="form-container">
-        <img src={BackgroundImg} alt="background" className="auth-img" />
-        <h1 className="login-heading">User Login</h1>
-        <form className="">
-          <div className="login-input-container">
+    <div className="auth-container" style={{margin : "90px auto"}}>
+        <h1 className="auth-heading">User Login</h1>
+          <div className="auth-input-container">
             <input
               type="text"
               name="email"
@@ -61,15 +56,13 @@ function Login() {
                 setUser({ ...user, password: e.target.value });
               }}
             />
-            <button type="button" onClick={login} className="login-btn">
+            <button type="button" onClick={login} className="auth-btn">
               Login
             </button>
-            <Link to="/signup" className="login-link">
+            <Link to="/signup" className="auth-link">
               Don`t have a account ? Signup
             </Link>
           </div>
-        </form>
-      </div>
       <Toaster />
     </div>
   );

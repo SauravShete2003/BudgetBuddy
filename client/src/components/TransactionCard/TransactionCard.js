@@ -27,7 +27,7 @@ function TransactionCard({
           {new Date(createdAt).toLocaleString()}
         </span>
         <span className={`transaction-amount transaction-type-${type}`}>
-          {type === "credit" ? `+${amount}` : `-${amount}`}
+          {type === "credit" ? `+ ${amount}` : `- ${amount}`}
         </span>
         <span className="transaction-category">{category}</span>
         <button

@@ -72,15 +72,15 @@ function Home() {
         <div className="transaction-details-container">
           <div className="transaction-details-item" style={{ color: "green" }}>
             <span className="transaction-details">Net Income</span>
-            <span className="transaction-title" >{netIncome}</span>
+            <span className="transaction-heading" >{netIncome}</span>
           </div>
           <div className="transaction-details-item">
             <span className="transaction-details">Net Balance</span>
-            <span className="transaction-title">{netIncome - netExpense}</span>
+            <span className="transaction-heading">{netIncome - netExpense}</span>
           </div>
           <div className="transaction-details-item" style={{ color: "red" }}>
             <span className="transaction-details">Net Expense</span>
-            <span className="transaction-title">{netExpense}</span>
+            <span className="transaction-heading">{netExpense}</span>
           </div>
         </div>
         <div className="transaction">
