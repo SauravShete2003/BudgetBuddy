@@ -1,20 +1,10 @@
 body {
-  background-color: #232946;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   margin: 0;
   padding: 0;
 }
 
-/* .button-hover-effect {
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.button-hover-effect:hover {
-  background-color: white;
-  color: black;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-} */
 
 @media (max-width: 500px) {
   .responsive-small-padding {
@@ -94,6 +84,10 @@ body {
   text-decoration: underline;
 }
 
+.auth-option{
+  width: 86%;
+}
+
 @media screen and (max-width: 500px) {
   .auth-container {
     width: 80%;
@@ -111,5 +105,8 @@ body {
     width: 60%;
     padding: 8px 12px;
     margin: 8px auto;
+  }
+  .auth-option{
+    width: 98%;
   }
 }

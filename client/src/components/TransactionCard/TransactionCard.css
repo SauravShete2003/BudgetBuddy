@@ -2,7 +2,7 @@
 .transaction-card {
   width: 95%;
   height: 70px;
-  background-color: #fffafa;
+  background-color: #fffffe;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   padding:10px 20px;
@@ -45,10 +45,12 @@
 
 .transaction-category {
   display: block;
-  font-size: 20px;
+  font-size: 14px;
   margin-top: 20px;
   text-align: center;
-  color: #555;
+  padding: 8px 16px ;
+  border-radius: 20px;
+  
 }
 
 .transaction-type-credit {
@@ -73,10 +75,8 @@
   cursor: pointer;
 }
 
-
 @media (max-width: 768px) {
   .transaction-card {
-    @extend .responsive-padding;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   }
 
