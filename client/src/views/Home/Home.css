@@ -1,8 +1,7 @@
-
 .home-container {
   margin: 20px;
   padding: 20px;
-  background-color: #b8c1ec;
+  background-color: #fffffe;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -12,6 +11,7 @@
   font-size: 22px;
   margin: 20px 0;
   text-align: center;
+  color: #232946;
 }
 
 .logout-btn {
@@ -25,7 +25,7 @@
 }
 
 .logout-btn:hover {
-  color: #2E2EF7;
+  color: #2e2ef7;
 }
 
 .transaction-details-container {
@@ -53,6 +53,7 @@
 }
 
 .transaction-title {
+  color: #232946;
   font-weight: 700;
   text-align: center;
   font-size: 24px;
@@ -61,19 +62,14 @@
 }
 
 .transaction-card {
-  background-color: #FFFAFA;
+  background-color: #fffafa;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin: 10px 0;
 }
 
-.transaction-title {
-  font-weight: 700;
-  font-size: 18px;
-}
-
-.transaction-heading{
+.transaction-heading {
   font-weight: 700;
   font-size: 25px;
   margin: 10px 0;
@@ -106,16 +102,50 @@
   color: red;
 }
 
-.transaction{
+.transaction {
   max-height: 280px;
   overflow-y: scroll;
 }
 
-.add-img{
+.add-img {
   width: 60px;
   position: fixed;
   right: 30px;
   top: 20%;
-  cursor: pointer;;
+  cursor: pointer;
   padding: 6px;
+}
+
+@media screen and (max-width: 500px) {
+  .home-heading {
+    font-size: 15px;
+  }
+
+  .transaction-details-item {
+    margin: 5px;
+    padding: 5px 8px;
+  }
+
+  .transaction-heading {
+    font-size: 18px;
+    margin: 5px 0;
+  }
+  .logout-btn {
+    top: 23px;
+    right: 25px;
+    font-size: 18px;
+  }
+  .transaction-details {
+    font-size: 16px;
+  }
+  .add-img {
+    width: 50px;
+    right: 35px;
+    top: 30%;
+  }
+
+  .transaction {
+  max-height: 250px;
+  overflow-y: scroll;
+}
 }

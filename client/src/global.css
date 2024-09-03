@@ -3,6 +3,8 @@ body {
   font-size: 16px;
   margin: 0;
   padding: 0;
+  background-color: #232946;
+  scroll-behavior: smooth;
 }
 
 
@@ -31,7 +33,7 @@ body {
 .auth-heading {
   font-size: 28px;
   font-weight: 600;
-  color: #1a1a2e;
+  color: #232946;
   margin-bottom: 20px;
 }
 
