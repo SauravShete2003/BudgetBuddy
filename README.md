@@ -12,7 +12,7 @@
 * <b>Version Control</b>: Git, GitHub
 
 ## Screenshots 📸
-<img src="./Screenshot 2024-09-19 184416.png"/>
+<img src="/Screenshot 2024-09-19 184416.png"/>
 
 ## Contact 📧
 For any questions or feedback, please reach out to me at sauravshete72@gmail.com.
