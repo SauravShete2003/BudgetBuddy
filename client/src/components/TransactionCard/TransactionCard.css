@@ -91,6 +91,7 @@
 
   .transaction-card {
     width: 91%;
+    height: 100px;
     padding:6px 15px;
     margin: 10px 0;
   }
