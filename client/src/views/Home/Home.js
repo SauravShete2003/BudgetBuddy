@@ -54,9 +54,7 @@ function Home() {
   return (
     <>
       <div className="home-container">
-        <span className="home-heading">
-          Welcome {user.fullName} To Budget Buddy...🩷
-        </span>
+        <h1 className="home-heading">Welcome, {user.fullName ? user.fullName.substring(0, 6) : "No Name"} To Budget Buddy...🩷</h1>
         <span
           className="logout-btn"
           onClick={() => {
