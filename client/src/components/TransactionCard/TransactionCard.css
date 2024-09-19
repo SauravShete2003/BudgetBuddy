@@ -91,7 +91,6 @@
 
   .transaction-card {
     width: 91%;
-    height: 100px;
     padding:6px 15px;
     margin: 10px 0;
   }
@@ -121,8 +120,8 @@
 
   .transaction-date {
     position: absolute;
-   bottom: 10px;
-    left: 20px;
+    bottom: 10px;
+    left: 15px;
     font-size: 15px;
   }
 

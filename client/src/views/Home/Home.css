@@ -118,7 +118,7 @@
 
 @media screen and (max-width: 500px) {
   .home-heading {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .transaction-details-item {
@@ -145,7 +145,7 @@
   }
 
   .transaction {
-  max-height: 300px;
+  max-height: 280px;
   overflow-y: scroll;
 }
 }
