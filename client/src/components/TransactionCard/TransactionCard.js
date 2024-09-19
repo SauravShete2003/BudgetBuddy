@@ -12,12 +12,12 @@ function Transaction_Category({ category }) {
     learning: { bgColor: "#FFD700" },
     health: { bgColor: "#98FB98" },
   };
-  const {  bgColor = "#ccc" } = CATEGORY_STYLE[category] || {};
+  const { bgColor = "#ccc" } = CATEGORY_STYLE[category] || {};
   return (
-    <div className="transaction-category" style={{backgroundColor : bgColor}}>
+    <div className="transaction-category" style={{ backgroundColor: bgColor }}>
       <span>{category}</span>
     </div>
-  )
+  );
 }
 
 function TransactionCard({
@@ -45,7 +45,7 @@ function TransactionCard({
       <span className={`transaction-amount transaction-type-${type}`}>
         {type === "credit" ? `+ ${amount}` : `- ${amount}`}
       </span>
-      <Transaction_Category category={category}/>
+      <Transaction_Category category={category} />
       <button type="button" className="delete-btn" onClick={deleteTransaction}>
         Delete
       </button>
