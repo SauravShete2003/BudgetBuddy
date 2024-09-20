@@ -162,3 +162,11 @@
     padding: 6px;
   }
 }
+
+
+@media screen and (max-width: 1211px) {
+  .transaction {
+    max-height: 550px;
+    overflow-y: scroll;
+  }
+}
