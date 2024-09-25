@@ -5,6 +5,7 @@ import "./Home.css";
 import TransactionCard from "../../components/TransactionCard/TransactionCard";
 import addImg from './add.png'
 import { Link } from "react-router-dom";
+import LogOut from './../../components/LogOut/LogOut'
 
 function Home() {
   const [user, setUser] = useState("");
@@ -65,7 +66,7 @@ function Home() {
             }, 2000);
           }}
         >
-          LogOut
+          <LogOut/>
         </span>
         <div className="transaction-details-container">
           <div className="transaction-details-item" style={{ color: "green" }}>
