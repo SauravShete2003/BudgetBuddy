@@ -40,7 +40,7 @@ function Home() {
   useEffect(() => {
     let income = 0;
     let expense = 0;
-    transactions.forEach(({ type, amount }) => {
+    transactions?.forEach(({ type, amount }) => {
       if (type === "credit") {
         income += amount;
       } else {
@@ -83,7 +83,7 @@ function Home() {
           </div>
         </div>
         <div className="transaction">
-        {transactions.map((object) => {
+        {transactions?.map((object) => {
 
           const { title, _id, amount, category, type, createdAt } = object;
           return (
@@ -101,7 +101,7 @@ function Home() {
         })}
         </div>
         <Link to={'/add'}>
-        <img src={addImg} className="add-img"/>
+        <img src={addImg} className="add-img" alt=""/>
         </Link>
         <Toaster />
       </div>

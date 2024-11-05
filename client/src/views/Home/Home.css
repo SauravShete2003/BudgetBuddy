@@ -152,7 +152,7 @@
   }
 
   .transaction {
-    max-height: 410px;
+    max-height: 400px;
     overflow-y: scroll;
   }
   .add-img {
@@ -166,7 +166,7 @@
 
 @media screen and (max-width: 1211px) {
   .transaction {
-    max-height: 550px;
+    max-height: 530px;
     overflow-y: scroll;
   }
 }

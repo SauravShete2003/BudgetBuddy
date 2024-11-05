@@ -29,7 +29,6 @@ function Login() {
     } else {
       toast.error(response.data.message);
     }
-    console.log(response);
   };
 
   return (
