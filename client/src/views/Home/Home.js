@@ -1,12 +1,11 @@
-import React, { useEffect, useState , useCallback } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
 import "./Home.css";
 import TransactionCard from "../../components/TransactionCard/TransactionCard";
-import addImg from './add.png';
+import addImg from "./add.png";
 import { Link } from "react-router-dom";
-import LogOut from './../../components/LogOut/LogOut';
-import Dashboard from "../../components/Dashboard/Dashboard";
+import LogOut from "./../../components/LogOut/LogOut";
 
 function Home() {
   const [user, setUser] = useState("");
@@ -26,11 +25,12 @@ function Home() {
   const loadTransactions = useCallback(async () => {
     if (!user._id) return;
     toast.loading("Transaction loading...");
-    const response = await axios.get(`${process.env.REACT_APP_API_URL}/transactions?userId=${user._id}`);
+    const response = await axios.get(
+      `${process.env.REACT_APP_API_URL}/transactions?userId=${user._id}`
+    );
     toast.dismiss();
     setTransactions(response.data.data);
   }, [user._id]);
-  
 
   useEffect(() => {
     loadTransactions();
@@ -54,7 +54,8 @@ function Home() {
     <>
       <div className="home-container">
         <h1 className="home-heading">
-          Welcome, {user.fullName ? user.fullName.substring(0, 6) : "No Name"} to Budget Buddy...🩷
+          Welcome, {user.fullName ? user.fullName.substring(0, 6) : "No Name"}{" "}
+          to Budget Buddy...🩷
         </h1>
         <span
           className="logout-btn"
@@ -68,7 +69,7 @@ function Home() {
         >
           <LogOut />
         </span>
-        
+
         <div className="transaction-details-container">
           <div className="transaction-details-item" style={{ color: "green" }}>
             <span className="transaction-details">Net Income</span>
@@ -76,19 +77,18 @@ function Home() {
           </div>
           <div className="transaction-details-item">
             <span className="transaction-details">Net Balance</span>
-            <span className="transaction-heading">{netIncome - netExpense}</span>
+            <span className="transaction-heading">
+              {netIncome - netExpense}
+            </span>
           </div>
           <div className="transaction-details-item" style={{ color: "red" }}>
             <span className="transaction-details">Net Expense</span>
             <span className="transaction-heading">{netExpense}</span>
           </div>
         </div>
-        
-        <Dashboard />
-        
         <div className="transaction">
           {transactions?.map((object) => {
-            const { title, _id, amount, category, type, createdAt } = object;
+            const {_id , title , amount ,category,type,createdAt} = object
             return (
               <TransactionCard
                 key={_id}
@@ -104,8 +104,8 @@ function Home() {
           })}
         </div>
 
-        <Link to={'/add'}>
-          <img src={addImg} className="add-img" alt=""/>
+        <Link to={"/add"}>
+          <img src={addImg} className="add-img" alt="" />
         </Link>
         <Toaster />
       </div>
