@@ -3,7 +3,7 @@ import "./TransactionCard.css";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 
-function Transaction_Category({ category }) {
+function TransactionCategory({ category }) {
   const CATEGORY_STYLE = {
     shopping: { bgColor: "#FFD700" },
     food: { bgColor: "#FFA07A" },
@@ -45,7 +45,7 @@ function TransactionCard({
       <span className={`transaction-amount transaction-type-${type}`}>
         {type === "credit" ? `+ ${amount}` : `- ${amount}`}
       </span>
-      <Transaction_Category category={category} />
+      <TransactionCategory category={category} />
       <button type="button" className="delete-btn" onClick={deleteTransaction}>
         Delete
       </button>

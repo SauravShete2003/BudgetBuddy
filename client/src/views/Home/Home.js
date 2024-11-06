@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState , useCallback } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
 import "./Home.css";
 import TransactionCard from "../../components/TransactionCard/TransactionCard";
-import addImg from './add.png'
+import addImg from './add.png';
 import { Link } from "react-router-dom";
-import LogOut from './../../components/LogOut/LogOut'
+import LogOut from './../../components/LogOut/LogOut';
+import Dashboard from "../../components/Dashboard/Dashboard";
 
 function Home() {
   const [user, setUser] = useState("");
@@ -22,20 +23,18 @@ function Home() {
     }
   }, []);
 
-  const loadTransactions = async () => {
-    if (!user._id) {
-      return;
-    }
+  const loadTransactions = useCallback(async () => {
+    if (!user._id) return;
     toast.loading("Transaction loading...");
-    const response = await axios.get(
-   `${process.env.REACT_APP_API_URL}/transactions?userId=${user._id}`);
+    const response = await axios.get(`${process.env.REACT_APP_API_URL}/transactions?userId=${user._id}`);
     toast.dismiss();
     setTransactions(response.data.data);
-  };
+  }, [user._id]);
+  
 
   useEffect(() => {
     loadTransactions();
-  }, [user]);
+  }, [loadTransactions]);
 
   useEffect(() => {
     let income = 0;
@@ -50,12 +49,13 @@ function Home() {
     setNetIncome(income);
     setNetExpense(expense);
   }, [transactions]);
-  
 
   return (
     <>
       <div className="home-container">
-        <h1 className="home-heading">Welcome, {user.fullName ? user.fullName.substring(0, 6) : "No Name"} To Budget Buddy...🩷</h1>
+        <h1 className="home-heading">
+          Welcome, {user.fullName ? user.fullName.substring(0, 6) : "No Name"} to Budget Buddy...🩷
+        </h1>
         <span
           className="logout-btn"
           onClick={() => {
@@ -66,12 +66,13 @@ function Home() {
             }, 2000);
           }}
         >
-          <LogOut/>
+          <LogOut />
         </span>
+        
         <div className="transaction-details-container">
           <div className="transaction-details-item" style={{ color: "green" }}>
             <span className="transaction-details">Net Income</span>
-            <span className="transaction-heading" >{netIncome}</span>
+            <span className="transaction-heading">{netIncome}</span>
           </div>
           <div className="transaction-details-item">
             <span className="transaction-details">Net Balance</span>
@@ -82,26 +83,29 @@ function Home() {
             <span className="transaction-heading">{netExpense}</span>
           </div>
         </div>
+        
+        <Dashboard />
+        
         <div className="transaction">
-        {transactions?.map((object) => {
-
-          const { title, _id, amount, category, type, createdAt } = object;
-          return (
-            <TransactionCard
-              key={_id}
-              _id={_id}
-              title={title}
-              amount={amount}
-              category={category}
-              type={type}
-              createdAt={createdAt}
-              loadTransactions={loadTransactions}
-            />
-          );
-        })}
+          {transactions?.map((object) => {
+            const { title, _id, amount, category, type, createdAt } = object;
+            return (
+              <TransactionCard
+                key={_id}
+                _id={_id}
+                title={title}
+                amount={amount}
+                category={category}
+                type={type}
+                createdAt={createdAt}
+                loadTransactions={loadTransactions}
+              />
+            );
+          })}
         </div>
+
         <Link to={'/add'}>
-        <img src={addImg} className="add-img" alt=""/>
+          <img src={addImg} className="add-img" alt=""/>
         </Link>
         <Toaster />
       </div>
